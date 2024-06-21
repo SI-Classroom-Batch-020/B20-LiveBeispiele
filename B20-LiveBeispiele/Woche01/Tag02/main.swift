@@ -9,4 +9,5 @@ import Foundation
 
 print("Willkommen, Batch 20!")
 print("Jetzt starten wir mit Programmieren...")
+print("Los geht es mit Variablen und Datentypen!")
 
