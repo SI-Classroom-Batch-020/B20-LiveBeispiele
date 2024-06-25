@@ -19,7 +19,7 @@ print(number) // es wird 10 gedruckt
 
 // Ints duerfen negativ sein
 number = -3
-print(number) // es wird 3 gedruckt
+print(number) // es wird -3 gedruckt
 
 number = 0
 print(number) // es wird 0 gedruckt
@@ -38,7 +38,7 @@ lastName = "Weasley"
 print(lastName)// druckt Weasley aus
 
 // man kann mehrere Variablen nacheinander/gleichzeitig ausdrucken, indem man sie mit einem , trennt
-print(firstName,lastName,number)
+print(firstName,lastName,number) // druckt Ron Weasley 0
 
 
 // das hier geht nicht: ich kann in eine Variable immer nur 1 Wert von 1 bestimmten Datentypen schreiben..
@@ -47,7 +47,7 @@ print(firstName,lastName,number)
 // Datentyp UInt: Ganze Zahlen ohne Komma, die nicht negativ sein duerfen
 var anzahlSteps: UInt = 10000
 // das hier geht , lediglich zum Ausdrucken die steps drucken und dann den String "Steps" dahinter setzen
-print(anzahlSteps,"Steps")
+print(anzahlSteps,"Steps") // druckt 10000 Steps
 // anzahlSteps = -10 // nicht moeglich, da in UInt keine negative Zahl darf.
 
 
@@ -55,15 +55,15 @@ print(anzahlSteps,"Steps")
 // String Interpolation: Andere Variablen innerhalb eines Strings benutzen mit Hilfe von \(variablenName)
 // 10000 Steps
 var anzahlStepsMitSteps: String = "\(anzahlSteps) Steps"
-print(anzahlStepsMitSteps)
+print(anzahlStepsMitSteps) // druckt 10000 Steps
 
-var greeting: String = "Hi, mein Name ist \(firstName) \(lastName)" // druckt "Hi, mein Name ist Ron Weasley"
+var greeting: String = "Hi, mein Name ist \(firstName) \(lastName)"
 
-print(greeting)
+print(greeting) // druckt "Hi, mein Name ist Ron Weasley"
 
 let string: String = "In den String koennen auch Sonderzeichen !%@$#&*()^"
 
-var fullName: String = "\(firstName) \(lastName)"
+var fullName: String = "\(firstName) \(lastName)" // "Ron Weasley"
 
 var greeting2: String = "Hi, ich bin \(fullName) und ich bin ein Zauberer" // druckt "Hi, ich bin Ron Weasley und ich bin ein Zauberer"
 print(greeting2)
@@ -71,7 +71,7 @@ print(greeting2)
 // Datentyp Double: Zahlen MIT Nachkommastelle (im Gegensatz zu Int: ganze Zahlen ohne Komma, bzw. PUNKT wird statt Komma geschrieben)
 let pi: Double = 3.14
 // pi = 3.15 // Cannot assign to value: 'pi' is a 'let' constant
-//print("Ich drucke diesen String mit der Nummer Pi \(pi) direkt aus.")
+print("Ich drucke diesen String, der das Double Pi ( \(pi) ) beinhaltet direkt aus.")
 let negativeDouble: Double = -9.99
 
 // alter als UInt zu schreiben, das nicht negativ sein darf, weil man ja nicht -22 Jahre alt sein kann
@@ -86,10 +86,6 @@ var result1: Int = 99 + 1 // 100
 var istSonnig: Bool = false
 // naechster Tag, es regnet
 istSonnig = true
-print("Ist es gerade sonnig? \(istSonnig)")
+print("Ist es gerade sonnig? \(istSonnig)") // druckt "Ist es gerade sonnig? true
 
-
-
-print("blablabla","Steps")
-print()
 
