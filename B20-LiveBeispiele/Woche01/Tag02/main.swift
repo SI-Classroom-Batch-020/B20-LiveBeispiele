@@ -87,5 +87,3 @@ var istSonnig: Bool = false
 // naechster Tag, es regnet
 istSonnig = true
 print("Ist es gerade sonnig? \(istSonnig)") // druckt "Ist es gerade sonnig? true
-
-
