@@ -184,6 +184,13 @@ text.insert("!", at: text.endIndex)
 print(text)
 
 // Char irgendwo in der Mitte einfuegen, nicht am Ende oder Anfang:
+// die gewünschte Stelle rausfinden, indem wir mit text.index() und offsetBy label arbeiten und diese dann an insert übergeben:
+// 1. gewünschten index in eine Variable speichern
+var camelIndex = text.index(text.startIndex, offsetBy: 3)
+text.insert("🐫", at: camelIndex)
+print(text)
+
+
 
 
 // Elemente entfernen: remove()
@@ -198,12 +205,42 @@ print(text)
 // Elemente ersetzen: replacing()
 // wir schauen das wort Hallo an
 // ich will "H" ersetzen mit (with) "h"
-print(text.replacing("H", with: "h"))
-
+text = text.replacing("H", with: "h")
+print(text)
 
 // ich will 1 l in "hallo" mit einem L ersetzen, sodass haLlo rauskommt:
-// wir geben ein weiteres Argument an: maxReplacements: das gibt an, wie viele von den ls wir maximal ersetzen wollen
+// wir geben ein weiteres Argument an: maxReplacements: das gibt an, wie viele von den ls wir maximal ersetzen wollen.
+// geben wir maxReplacements nicht an, werden einfach alle ls ersetzt
 print(text.replacing("l", with: "L",maxReplacements: 1))
 
+// BONUS
 
+// nur das 2. l in ‘hallo’ replacen: das ist leider nicht in .replacing() definiert, funktioniert also nur manuell, indem man eigenhändig hochzählt, wie viele ls vorkamen, bis das 2. l erreicht ist. dazu braucht man eine schleife und if else, lernen wir beides erst später kennen. würde zB so aussehen:
+print("---Bonus---")
+print("text vor dem ersetzen des 2. Ls: \(text)")
+// targetIndex mit Platzhalterwert firstIndex
+var targetIndex = text.startIndex
+// vorkommen der Ls zählen. wir wollen das 2. L ersetzen
+var lVorkommenCounter = 0
+// wir durchlaufen alle indices
+for index in text.indices {
+    // wenn wir ein l finden, erhöhen wir den counter
+    if text[index] == "l" {
+        lVorkommenCounter += 1
+        // wenn wir am 2. L angekommen sind, schreiben wir dessen index in targetIndex und brechen die Schleife ab
+        if lVorkommenCounter == 2 {
+            targetIndex = index
+            break
+        }
+    }
+}
+
+// danach über umwege replacen, weil man in replacing() nicht angeben kann, welchen Buchstaben genau man ersetzen will
+// wir entfernen also erst das kleine l und setzen dann stattdessen ein großes L an die gleiche stellt
+
+text.remove(at: targetIndex)
+//print(text)
+var targetIndexPlus1 = text.index(after: targetIndex)
+text.insert("L", at: targetIndex)
+print("text nach dem ersetzen des 2. ls: \(text)")
 
