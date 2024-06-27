@@ -144,15 +144,27 @@ print("Erster Buchstabe mit text[startIndex] gefunden: \(ersterCharacter)") // E
 // mit den [ ] kann ich auf den Inhalt zugreifen, der an der Stelle steht, die in den [ ] angegeben ist
 let firstChar: Character = swiftString[swiftString.startIndex]
 
-// let test = swiftString[swiftString.endIndex]
-// print("Text mit endIndex: \(swiftString.endIndex)")
 
-// string.index() : gibt uns den index VOR dem in der Klammer gegebenen index aus
+// string.index() mit before-Label : gibt uns den index VOR dem in der Klammer gegebenen index aus
 let index = swiftString.index(before: swiftString.endIndex) // in endIndex steht NICHT der letzte Index, sondern ein Index, der eine position GROESSER ist als der tatsächliche letzte Index.
 
 let letzterCharacter: Character = swiftString[swiftString.index(before: swiftString.endIndex)] // Gefundenes Zeichen: t.
 
 print("Letzter Buchstabe in \(swiftString) mit \\(swiftString.index(before: swiftString.endIndex) gefunden: \(letzterCharacter)")
+
+// NEUER STOFF, NICHT IN DER VORLESUNG GEMACHT:
+// an den 2. Buchstaben kommen: .index() mit dem after-Label: nimmt den index nach (after) dem startIndex
+let secondIndex = hallo.index(after: hallo.startIndex)
+let secondCharacter = hallo[secondIndex]
+print("2. Buchstabe in 'Hallo': \(secondCharacter)") // Ausgabe: w
+
+// AUF EINEN BESTIMMTEN INDEX VIA INTEGER-ANGABE ZUGREIFEN: mit offsetBy-Label.
+// ich will auf den 4. Buchstaben von hallo, also das 2. 'l' zugreifen.
+// dadurch, dass die Buchstaben bei 0 anfangen zu zählen, ist der Index vom 4. Buchstaben also 3.
+// diese 3 können wir unter dem offsetBy-Label angeben.
+let index2ndL = hallo.index(hallo.startIndex, offsetBy: 3)
+print("4. Buchstabe in 'hallo': \(hallo[index2ndL])")
+
 
 // Länge eines String: .count()
 print("Anzahl Buchstaben im Wort 'Swift' (swiftString): \(swiftString.count)")
@@ -170,6 +182,7 @@ var text = "Hallo"
 // insert(das, was in den String soll, at: Stelle, an die es soll)
 text.insert("!", at: text.endIndex)
 print(text)
+
 // Char irgendwo in der Mitte einfuegen, nicht am Ende oder Anfang:
 
 
