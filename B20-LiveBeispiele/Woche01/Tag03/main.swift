@@ -229,4 +229,3 @@ let stringAlsInt: Int? = Int(nummerAlsText)
 
 
 
-

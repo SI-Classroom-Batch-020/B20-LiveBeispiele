@@ -7,5 +7,5 @@
 
 import Foundation
 
-print("Hello, World!")
+print("Hello, World! Gesamtprojekt-Main. Hier findest du nichts, schau in die einzelnen Wochen und Tage")
 
