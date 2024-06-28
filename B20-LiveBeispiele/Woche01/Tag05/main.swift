@@ -12,12 +12,10 @@
 
 import Foundation
 
-print("Hello, World!")
-
-var beispiel = 0
 
 print("Willkommen im Syntax Fitnessstudio!")
 
+// Variablen / Konstanten anlegen
 let userFirstName: String = "James Matthew"
 var userLastName: String = "Washington Kennedy"
 var userName: String = userFirstName + " " + userLastName
@@ -30,6 +28,8 @@ var isMember: Bool = false
 // neu zuweisen/überschreiben einer Variable
 // James wird Mitglied
 isMember = true
+
+// Mathematische Operationen
 // James gewinnt an Gewicht, weil er Muskelmasse aufgebaut hat
 userWeight += 3 // in userWeight steht jetzt 93.9
 
@@ -37,16 +37,19 @@ userWeight /= 2
 // oder: userWeight *= 0.5
 print(userWeight) // wiegt jetzt 46.95
 
+// Tupel mit Label
 var james: (name: String, age: UInt, height: Double, weight: Double, isMember: Bool) = (userName,userAge,userHeightInM,userWeight,isMember)
 
 print("Userdaten von James: \(james)")
 
 
+// Zugriff auf Daten im Tupel mit . Punktoperator, Daten im Tupel aktualisieren
 james.3 = 90.0
 james.weight += 5.0
 print("James wiegt jetzt \(james.weight) kg.")
 
-// Groesse von m in cm umrechnen mit Typkonvertierung
+
+// Groesse von m in cm umrechnen mit Typkonvertierung: nachkommastelle wird von Double zu Int abgeschnitten, deshalb: * 100 rechnen
 // 1.85 * 100 = 185.0
 // 185
 
@@ -73,28 +76,28 @@ print(james)
 
 // maxReplacements: gibt an, wie viele m's wir ersetzen wollen. läuft von links nach rechts, dh nur das 1. n wird ersetzt
 james.name = james.name.replacing("n",with: "m", maxReplacements: 1).replacing("N",with: "M")
-
 print(james.name)
 
 
 // Bonus
-// startIndex
+// startIndex:
 let ersterIndex: String.Index = james.name.startIndex
 // [ ] bedeuten: zugriff auf das element, das am index steht, das in den eckigen klammern steht
 let firstLetter: Character = james.name[ersterIndex]
 
-// print(beispielIndex)
+
 print("Erster Buchstabe von James: \(firstLetter)")
 print("Erster Buchstabe von James: \(james.name.first!)")
 
-// endIndex gibt uns nicht den letzten Index zurück, sondern den letzten Index + 1
+// endIndex
+// endIndex gibt uns leider nicht den letzten Index zurück, sondern den letzten Index + 1
 let wrongLastIndex: String.Index = james.name.endIndex
 //let wrongLastLetter: Character = james.name[wrongLastIndex] // FEHLER: String index is out of bounds
 //print("Letzter Buchstabe von James: \(wrongLastLetter)")
 
 print("Letzter Buchstabe von James: \(james.name.last!)")
 
-// wir muessen uns abhilfe schaffen im umgang mit dem endIndex, da er immer out of bounds ist (also immer der eigentliche letzet index + 1). dazu benutzen wir die .index() Funktion, denn bei ihr können wir das before:-Label angeben, das sagt: nimm den index VOR dem endIndex
+// wir muessen uns abhilfe schaffen im umgang mit dem endIndex, da er immer out of bounds ist (also immer der eigentliche letzte index + 1). dazu benutzen wir die .index() Funktion, denn bei ihr können wir das before:-Label angeben, das sagt: nimm den index VOR dem endIndex
 
 let jamesLastIndex: String.Index = james.name.index(before: wrongLastIndex)
 print("Letzter Buchstabe von James: \(james.name[jamesLastIndex])")
@@ -111,7 +114,6 @@ print("4. Buchstabe in James Name: \(james.name[indexFourthLetter])")
 
 // insert
 // remove --> siehe beispiel Tag 4
-
 
 // einen Teilstring aus einem String holen:
 // holt alle Character EXKLUSIVE dem am angegebenen Index raus
