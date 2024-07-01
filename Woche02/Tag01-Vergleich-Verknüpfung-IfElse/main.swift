@@ -104,7 +104,60 @@ let isNotHot: Bool = !(temperature < 30)
 // Shortcut für {}: Option + 8 oder 9
 
 print("---Verzweigung: If-Else---")
+
+// if else
+let todaysTemp: Int = 30
+
+if todaysTemp >= 25 {
+    print("Das Wetter ist super, ganze \(todaysTemp) Grad!")
+} else {
+    print("Das Wetter ist nicht so schön, nur \(todaysTemp) Grad!")
+}
+
+
+
+
 // Verzweigung: else if
+let ampel: String = "rot"
 
+if (ampel == "grün"){
+    print("Gib Gas!")
+} else if (ampel == "rot"){
+    print("Du musst bremsen, Ampel ist rot...")
+} else if (ampel == "gelb"){
+    print("Die Ampel ist gelb... auch lieber runter vom Gas")
+} else {
+    print("Dies ist keine Ampelfarbe...")
+}
 
+// hier geht der Code in jedem Fall weiter
+
+let isUserLoggedIn: Bool = false
+
+// Variante 1: im true fall Feed anzeigen
+if isUserLoggedIn {
+    print("Feed anzeigen...")
+} else {
+    print("Login anzeigen...")
+}
+
+// Variante 2: im false Fall Login anzeigen
+if !isUserLoggedIn {
+    print("Login anzeigen...")
+} else {
+    print("Feed anzeigen...")
+}
+
+// Beispiel aus den Folien:
+let wahreBedingung = true
+let falscheBedingung = false
+
+// Beispiel dafür, dass else if ausgeführt wird.
+if (falscheBedingung) {
+    print("Der if Code Block wurde ausgeführt!")
+} else if (wahreBedingung) {
+    print("Der else if Code Block wurde ausgeführt!") // hier springen wir rein
+} else {
+    print("Der else Code Block wurde ausgeführt!")
+}
 
