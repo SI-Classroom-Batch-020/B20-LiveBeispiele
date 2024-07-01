@@ -1,8 +1,8 @@
 //
 //  main.swift
-//  Woche01
+//  Woche02
 //
-//  Created by Marianne Leal on 21.06.24.
+//  Created by Marianne Leal on 01.07.24.
 //
 
 import Foundation
